@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import data, {uniqueCategories, categoriesWithCounts, categoriesAndCounts} from './data';
+import Header from './Header';
+import CategoryList from './CategoryList';
+import ProductList from './ProductList';
+import Inventory from './Inventory';
 
 function App() {
+  
+  const [category, setCategory] = useState()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Header
+        title="World Class Products"
+        productCount={data.length}
+        categoryCount={uniqueCategories.length}
+      />
+      
+      <CategoryList 
+      category={category}
+      onClick={newCategory => setCategory(newCategory)
+      }
+      />
+      
+      <ProductList category={category} />
+      
+      <Inventory />
     </div>
   );
 }

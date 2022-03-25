@@ -1,0 +1,13 @@
+.Inventory {
+    background-color: grey;
+    border-radius: 10px;
+    border: 1px solid pink;
+    -webkit-box-shadow: 0px 19px 15px -6px #000000; 
+    box-shadow: 0px 19px 15px -6px #000000;
+    margin: 2.5% 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
